@@ -9,7 +9,9 @@ public:
   static Singleton* instance() {
     if (!instance_) {
       instance_ = new Singleton();
+      std::cout << "First Time" << std::endl;
     }
+    std::cout << "Next Time" << std::endl;
     return instance_;
   }
 
@@ -22,7 +24,12 @@ private:
 Singleton* Singleton::instance_ = nullptr;
 
 int main(int argc, char* argv[]) {
-  Singleton *singleton = Singleton::instance();
+  Singleton *singleton;
+  std::cout << "---------" << std::endl;
+  singleton = Singleton::instance();
+  std::cout << "---------" << std::endl;
   singleton->checkSingleton();
+  std::cout << "---------" << std::endl;
+  Singleton *singleton1 = Singleton::instance();
+  singleton1->checkSingleton();
 }
-
