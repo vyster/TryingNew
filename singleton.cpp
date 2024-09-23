@@ -44,23 +44,3 @@ int main(int argc, char* argv[]) {
 
 // //For threadsafe Singleton please read https://github.com/dcblack/singleton/tree/master
 
-
-//     Singleton() { }
-//     void operator delete(void*) {}; // such that its not deleted accidentally
-// public:
-
-//     Singleton(Singleton&) = delete; // Copy prohibited
-//     void operator=(const Singleton&) = delete; // Assignment prohibited
-//     Singleton& operator=(Singleton&&) = delete; // Move assignment
-//     static Singleton* getInstance();
-//     // This is a sample method
-//     std::chrono::system_clock::time_point getTime() const {
-//         auto now = std::chrono::system_clock::now();
-//         return now;
-//     };
-// };
-
-// Singleton* Singleton::getInstance() {
-//     static Singleton* pInstance_;
-//     return pInstance_;
-// }
