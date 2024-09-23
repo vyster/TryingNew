@@ -5,21 +5,23 @@ class Singleton {
 public:
   Singleton(const Singleton&) = delete; //copy constructor deleted
   Singleton& operator=(const Singleton&) = delete;//copy overloading not allowed
+  Singleton& operator=(const Singleton&&) = delete; // Move assignmentdeleted
 
   static Singleton* instance() {
     if (!instance_) {
-      instance_ = new Singleton();
-      std::cout << "1st Time" << std::endl;
+      instance_ = new Singleton();//create memory when called for first time
+      std::cout << "1st Time" << std::endl; //
       return instance_;
     }
     std::cout << "Next Time" << std::endl;
     return instance_;
   }
 
-  void checkSingleton() { std::cout << "Singleton call" << std::endl; }
+  void callSingleton() { std::cout << "Singleton call" << std::endl; }
 private:
-  Singleton() { std::cout << "Singleton Constructor" << std::endl; }
-  static Singleton* instance_;
+  //void operator delete(void*) {};??
+  Singleton() { std::cout << "Singleton Constructor" << std::endl; } //make constructor private
+  static Singleton* instance_; // make the instance static and private
 };
 
 Singleton* Singleton::instance_ = nullptr;
@@ -27,15 +29,38 @@ Singleton* Singleton::instance_ = nullptr;
 int main(int argc, char* argv[]) {
   Singleton *singleton;
   std::cout << "---------" << std::endl;
-  singleton = Singleton::instance();
+  singleton = Singleton::instance(); //constructor only called once
   std::cout << "---------" << std::endl;
-  singleton->checkSingleton();
+  singleton->callSingleton();
   std::cout << "---------" << std::endl;
-  singleton->checkSingleton();
+  singleton->callSingleton();
   std::cout << "---------" << std::endl;
   Singleton *singleton1;
   std::cout << "---------" << std::endl;
   singleton1 = Singleton::instance();
   std::cout << "---------" << std::endl;
-  singleton1->checkSingleton();
+  singleton1->callSingleton();
 }
+
+// //For threadsafe Singleton please read https://github.com/dcblack/singleton/tree/master
+
+
+//     Singleton() { }
+//     void operator delete(void*) {}; // such that its not deleted accidentally
+// public:
+
+//     Singleton(Singleton&) = delete; // Copy prohibited
+//     void operator=(const Singleton&) = delete; // Assignment prohibited
+//     Singleton& operator=(Singleton&&) = delete; // Move assignment
+//     static Singleton* getInstance();
+//     // This is a sample method
+//     std::chrono::system_clock::time_point getTime() const {
+//         auto now = std::chrono::system_clock::now();
+//         return now;
+//     };
+// };
+
+// Singleton* Singleton::getInstance() {
+//     static Singleton* pInstance_;
+//     return pInstance_;
+// }
