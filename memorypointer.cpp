@@ -9,4 +9,12 @@ int main() {
     cout << "Difference in bytes (startd - start): " << ((char*)startd - (char*)start) << " bytes" << endl;
     cout << "Difference in double (startd - start): " ;std::cout << (startd - (double*)start)  << " bytes" << endl;
     cout << "Difference in int (startd - start): " ;std::cout << ((int*)startd - start) << " bytes" << endl;
+
+    unsigned int obj = 0xfffde096;
+	unsigned char* t1 = (unsigned char*) & obj;
+	for (unsigned int i = 0;i < sizeof(obj);i++)
+	{
+		std::cout << std::hex<<(unsigned)*t1 << std::endl;
+		t1++;
+	}
 }
