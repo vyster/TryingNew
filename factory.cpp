@@ -8,17 +8,17 @@ public:
   virtual void checkProduct() = 0;
 };
 
-class concreateiPad : public Product {
+class makingiPad : public Product {
 public:
-  concreateiPad() { std::cout << "iPad Created" << std::endl; }
-  ~concreateiPad() {}
+  makingiPad() { std::cout << "iPad Created" << std::endl; }
+  ~makingiPad() {}
   void checkProduct() { std::cout << "iPad is still here" << std::endl; }
 };
 
-class concreateMacbook : public Product {
+class makingMacbook : public Product {
 public:
-  concreateMacbook() { std::cout << "Macbook Created" << std::endl; }
-  ~concreateMacbook() {}\
+  makingMacbook() { std::cout << "Macbook Created" << std::endl; }
+  ~makingMacbook() {}\
   void checkProduct() { std::cout << "Macbook is still here" << std::endl; }
 };
 
@@ -30,19 +30,19 @@ public:
   virtual Product* createMacbook() = 0;
 };
 
-class AppleCreater : public AppleCompany {
+class AppleFactory : public AppleCompany {
 public:
-  AppleCreater() { std::cout << "Apple Creater class" << std::endl; }
-  ~AppleCreater() {}
-  Product* createiPad() { return new concreateiPad; }
-  Product* createMacbook() { return new concreateMacbook; }
+  AppleFactory() { std::cout << "Apple Creater class" << std::endl; }
+  ~AppleFactory() {}
+  Product* createiPad() { return new makingiPad; }
+  Product* createMacbook() { return new makingMacbook; }
 };
 
 int main(int argc, char* argv[]) {
   std::cout << "Factory Design Pattern" << std::endl;
-  AppleCompany *creater = new AppleCreater;
-  Product *productA = creater->createiPad();
+  AppleCompany *factory = new AppleFactory;
+  Product *productA = factory->createiPad();
   productA->checkProduct();
-  Product *productB = creater->createMacbook();
+  Product *productB = factory->createMacbook();
   productB->checkProduct();
 }
