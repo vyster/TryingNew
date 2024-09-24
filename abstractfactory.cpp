@@ -80,7 +80,7 @@ public:
 int main(int argc, char* argv[]) {
 
   AppleCompany* cf1 = new FactoryNewyork();//vtable??
-  MakingiPad* iPad1 = cf1->createiPad();
+  MakingiPad* iPad1 = cf1->createiPad();//what client does
   iPad1->checkProduct();
   MakingMacbook* Macbook1 = cf1->createMacbook();
   Macbook1->checkProduct();
