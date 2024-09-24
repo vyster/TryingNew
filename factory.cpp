@@ -3,7 +3,7 @@
 
 class Product {
 public:
-  Product() { std::cout << "Some Apple Product being Created" << std::endl; }
+  Product() { std::cout << "Apple Product Interface being Created" << std::endl; }
   virtual ~Product() {}
   virtual void checkProduct() = 0;
 };
@@ -24,7 +24,7 @@ public:
 
 class AppleCompany {
 public:
-  AppleCompany() { std::cout << "Apple Company Client Facing Interface" << std::endl; }
+  AppleCompany() { std::cout << "Apple Company Interface Client Facing" << std::endl; }
   virtual ~AppleCompany() {}
   virtual Product* createiPad() = 0;
   virtual Product* createMacbook() = 0;
