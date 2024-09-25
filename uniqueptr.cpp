@@ -1,3 +1,15 @@
+std::unique_ptr<int> ptr(new int(42));  // Owns a dynamically allocated int
+// Use the value pointed to by ptr
+std::cout << *ptr << std::endl;  // Output: 42
+
+// Transfer ownership (move semantics)
+std::unique_ptr<int> anotherPtr = std::move(ptr);  // ptr becomes nullptr//not dangling
+
+// Another way to release ownership and deallocate memory
+ptr.reset();  // ptr is set to nullptr and the object it pointed to is deleted
+
+
+
 template <class T>
 class my_unique_ptr
 {
