@@ -30,7 +30,7 @@ public:
 		: mLength(other.mLength), mData(new int[other.mLength])
 	{
 		std::cout << "A(const A&). length = "
-			<< other.mLength << ". Copying resource." << std::endl;
+			<< other.mLength << ". Copying resource with copy constructor." << std::endl;
 
 		std::copy(other.mData, other.mData + mLength, mData);
 	}
@@ -39,7 +39,7 @@ public:
 	A& operator=(const A& other)
 	{
 		std::cout << "operator=(const A&). length = "
-			<< other.mLength << ". Copying resource." << std::endl;
+			<< other.mLength << ". Copying resource with assignment." << std::endl;
 
 		if (this != &other) {
 			delete[] mData;  // Free the existing resource.
