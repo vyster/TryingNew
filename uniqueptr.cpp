@@ -19,6 +19,7 @@ private:
 public:
 	my_unique_ptr() : ptr(nullptr) // default constructor
 	{
+		
 	}
 
 	my_unique_ptr(T * ptr) : ptr(ptr)
