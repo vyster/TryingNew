@@ -21,35 +21,35 @@ public:
   //virtual void checkProduct() = 0;
 };
 
-class iPad1 : public MakingiPad {
+class iPadM1 : public MakingiPad {
 public:
-  iPad1() { std::cout << "iPad made in NewYork" << std::endl; }
-  ~iPad1() {}
-  void checkProduct() { std::cout << "iPad1 API called" << std::endl;}
+  iPadM1() { std::cout << "iPadM1 made in NewYork" << std::endl; }
+  ~iPadM1() {}
+  void checkProduct() { std::cout << "iPadM1 API called" << std::endl;}
 
 };
 
-class iPad2 : public MakingiPad {
+class iPadM2 : public MakingiPad {
 public:
-  iPad2() { std::cout << "iPad made in California" << std::endl; }
-  ~iPad2() {}
-  void checkProduct() { std::cout << "iPad2 API called" << std::endl; }
+  iPadM2() { std::cout << "iPadM2 made in California" << std::endl; }
+  ~iPadM2() {}
+  void checkProduct() { std::cout << "iPadM2 API called" << std::endl; }
 
 };
 
-class Macbook1 : public MakingMacbook {
+class MacbookM1 : public MakingMacbook {
 public:
-  Macbook1() { std::cout << "Macbook1 made in NewYork" << std::endl; }
-  ~Macbook1() {}
-  void checkProduct() { std::cout << "Macbook1 API called" << std::endl; }
+  MacbookM1() { std::cout << "MacbookM1 made in NewYork" << std::endl; }
+  ~MacbookM1() {}
+  void checkProduct() { std::cout << "MacbookM1 API called" << std::endl; }
 
 };
 
-class Macbook2 : public MakingMacbook {
+class MacbookM2 : public MakingMacbook {
 public:
-  Macbook2() { std::cout << "Macbook2 made in California" << std::endl; }
-  ~Macbook2() {}
-  void checkProduct() { std::cout << "Macbook2 API called" << std::endl; }
+  MacbookM2() { std::cout << "MacbookM2 made in California" << std::endl; }
+  ~MacbookM2() {}
+  void checkProduct() { std::cout << "MacbookM2 API called" << std::endl; }
 
 };
 
@@ -65,16 +65,16 @@ class FactoryNewyork : public AppleCompany {
 public:
   FactoryNewyork() { std::cout << "Factory in Newyork triggered" << std::endl; }
   ~FactoryNewyork() {}
-  MakingiPad* createiPad() { return new iPad1; }
-  MakingMacbook* createMacbook() { return new Macbook1; }
+  MakingiPad* createiPad() { return new iPadM1; }
+  MakingMacbook* createMacbook() { return new MacbookM1; }
 };
 
 class FactoryCalifornia : public AppleCompany {
 public:
   FactoryCalifornia() { std::cout << "Factory in California triggered" << std::endl; }
   ~FactoryCalifornia() {}
-  MakingiPad* createiPad() { return new iPad2; }
-  MakingMacbook* createMacbook() { return new Macbook2; }
+  MakingiPad* createiPad() { return new iPadM2; }
+  MakingMacbook* createMacbook() { return new MacbookM2; }
 };
 
 int main(int argc, char* argv[]) {

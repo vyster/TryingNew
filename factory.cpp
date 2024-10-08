@@ -3,7 +3,7 @@
 
 class Product {
 public:
-  Product() { std::cout << "Apple Product Interface being Created" << std::endl; }
+  Product() { std::cout << "Apple Product Interface being Called" << std::endl; }
   virtual ~Product() {}
   virtual void checkProduct() = 0;
 };
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
   std::cout << "Factory Design Pattern" << std::endl;
 
   AppleCompany *factory = new AppleFactory;
-  Product *productA = factory->createiPad();
+  Product *productA = factory->createiPad();//
   productA->checkProduct();
 
 
