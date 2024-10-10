@@ -7,7 +7,7 @@ public:
     FileHandler(const std::string& filename) {
         file.open(filename);
         if (!file.is_open()) {
-            throw std::runtime_error("Cannot open file.");
+            throw std::runtime_error("Cannot open the file.");
         }
         std::cout << "File opened: " << filename << std::endl;
     }
