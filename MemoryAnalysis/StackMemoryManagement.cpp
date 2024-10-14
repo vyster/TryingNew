@@ -6,7 +6,8 @@ void stackExample() {
     double b = 20.5;     // Allocated on the stack
     std::cout << "a: " << a << ", b: " << b << std::endl;
     
-} // 'a' and 'b' are automatically deallocated here
+} 
+// 'a' and 'b' are automatically deallocated here
 
 int main() {
     stackExample();
