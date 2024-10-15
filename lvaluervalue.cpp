@@ -127,7 +127,6 @@ int main()
 
 // How to build and run
 // If you save your code in a.cpp and use g++
-
 // g++ --std=c++14 a.cpp -o a && ./a
 // Exercise 1
 // Add the following to a new class A:
