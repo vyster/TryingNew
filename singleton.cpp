@@ -10,10 +10,10 @@ public:
   static Singleton* getInstance() {
     if (!instance_) {
       instance_ = new Singleton();//create memory when called for first time
-      std::cout << "1st Time" << std::endl; //
+      std::cout << "1st Time creation" << std::endl; //
       return instance_;
     }
-    std::cout << "Next Time" << std::endl;
+    std::cout << "Next Time after " << std::endl;
     return instance_;
   }
 
