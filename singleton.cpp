@@ -21,7 +21,7 @@ public:
 
 private:
   //void operator delete(void*) {};??
-  Singleton() { std::cout << "Singleton Constructor" << std::endl; } //make constructor private
+  Singleton() { std::cout << "Singleton Constructor is Private" << std::endl; } //make constructor private
   static Singleton* instance_; // make the instance static and private
 };
 
