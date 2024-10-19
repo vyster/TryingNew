@@ -32,7 +32,7 @@ public:
 	my_unique_ptr(my_unique_ptr && dyingObj) // move constructor
 	{
 		// Transfer ownership of the memory pointed by dyingObj to this object
-		this->ptr = dyingObj.ptr;
+		this->ptr = dyingObj.ptr;///deep cp
 		dyingObj.ptr = nullptr; 
 	}
 
