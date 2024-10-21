@@ -8,8 +8,6 @@ std::unique_ptr<int> anotherPtr = std::move(ptr);  // ptr becomes nullptr//not d
 // Another way to release ownership and deallocate memory
 ptr.reset();  // ptr is set to nullptr and the object it pointed to is deleted
 
-
-
 template <class T>
 class my_unique_ptr
 {
