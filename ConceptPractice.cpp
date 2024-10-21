@@ -342,16 +342,6 @@ if (cin)                    // Good state (not EOF)?
 istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
 ostream& operator<<(ostream& o, const T& x) {return o << ...;}
 
-// ## `fstream.h`, `fstream` (File I/O works like `cin`, `cout` as above)
-
-#include <fstream>          // Include filestream (std namespace)
-ifstream f1("filename");    // Open text file for reading
-if (f1)                     // Test if open and input available
-f1 >> x;                    // Read object from file
-f1.get(s);                  // Read char or line
-f1.getline(s, n);           // Read line into string s[n]
-ofstream f2("filename");    // Open file for writing
-if (f2) f2 << x;            // Write to file
 
 // ## `string` (Variable sized character array)
 
@@ -365,6 +355,17 @@ s1.substr(m, n);          // Substring of size n starting at s1[m]
 s1.c_str();               // Convert to const char*
 s1 = to_string(12.05);    // Converts number to string
 getline(cin, s);          // Read line ending in '\n'
+
+// ## `fstream.h`, `fstream` (File I/O works like `cin`, `cout` as above)
+
+#include <fstream>          // Include filestream (std namespace)
+ifstream f1("filename");    // Open text file for reading
+if (f1)                     // Test if open and input available
+f1 >> x;                    // Read object from file
+f1.get(s);                  // Read char or line
+f1.getline(s, n);           // Read line into string s[n]
+ofstream f2("filename");    // Open file for writing
+if (f2) f2 << x;            // Write to file
 
 // ## `vector` (Variable sized array/stack with built in memory allocation)
 
