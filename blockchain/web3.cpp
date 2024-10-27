@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "web.h"
+#include "web3.h"
 
 using namespace bc;
 
@@ -52,7 +52,6 @@ int main() {
 
     // Trying to "hack" the blockchain
     bc[0].transaction = "Hello moon";
-
     // Checking hashes
     if (bc.check_hash()){
         std::cout << "Blockchain hashes are consistent" << std::endl;

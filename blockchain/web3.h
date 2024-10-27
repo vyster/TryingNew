@@ -61,7 +61,7 @@ namespace bc {
         public:
             // types
             typedef _Tp                                                           value_type;
-            typedef block<_Tp,_Hash,_Pred,_Alloc>                                 block_type;
+            typedef block<_Tp,_Hash,_Pred,_Alloc >                                 block_type;
             typedef _Hash                                                         hasher;
             typedef _Pred                                                         key_equal;
             typedef _Alloc                                                        allocator_type;
