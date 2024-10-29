@@ -66,7 +66,7 @@ int main() {
         std::cout << "Blockchain hashes and transactions are not consistent" << std::endl;
     }
 
-
+ //bitcoin halving
 
     return 0;
 }
