@@ -15,12 +15,11 @@ namespace bc {
         public:
             size_t previous_hash;
             _Tp    transaction;
-            size_t block_hash;
-
+            size_t block_hash_p;
             block(){}
 
             block(size_t _previous_hash, _Tp _transaction) : previous_hash(_previous_hash), transaction(_transaction) {
-                this->block_hash = calculate_hash();
+                this->block_hash_p = calculate_hash();
             }
 
             size_t calculate_hash(){
@@ -43,8 +42,8 @@ namespace bc {
                 this->transaction = _transaction;
             }
 
-            size_t get_block_hash(){
-                return this->block_hash;
+            size_t get_block_hash_p(){
+                return this->block_hash_p;
             }
 
         private:
@@ -82,11 +81,11 @@ namespace bc {
             }
 
             void push_back(const value_type& x){
-                this->emplace_back(block_type(this->back().block_hash,x));
+                this->emplace_back(block_type(this->back().block_hash_p,x));
             }
 
             void push_back(value_type&& x){
-                this->emplace_back(block_type(this->back().block_hash,x));
+                this->emplace_back(block_type(this->back().block_hash_p,x));
             }
 
             bool check(iterator begin, iterator end){
@@ -94,9 +93,9 @@ namespace bc {
                 ++second;
                 while (second != end){
                     size_t calculated_hash = begin->calculate_hash();
-                    if (second->previous_hash != begin->block_hash
+                    if (second->previous_hash != begin->block_hash_p
                         || second->previous_hash != calculated_hash
-                        || calculated_hash != begin->block_hash){
+                        || calculated_hash != begin->block_hash_p){
                         return false;
                     }
                     ++begin;
@@ -113,7 +112,7 @@ namespace bc {
                 iterator second = begin;
                 ++second;
                 while (second != end){
-                    if (second->previous_hash != begin->block_hash){
+                    if (second->previous_hash != begin->block_hash_p){
                         return false;
                     }
                     ++begin;
