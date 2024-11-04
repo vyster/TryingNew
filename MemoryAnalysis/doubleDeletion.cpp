@@ -13,7 +13,7 @@
 int main() {
     int* ptr = new int(40);
     delete ptr;
-    delete ptr; // Undefined behavior: double deletion
+    delete ptr; // Undefined behavior: double deletion//error
     return 0;
 }
 
