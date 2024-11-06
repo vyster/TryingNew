@@ -13,10 +13,10 @@ void heapExample() {
         arr[i] = i * 10;
         std::cout << "arr[" << i << "] = " << arr[i] << std::endl;
     }
-    delete[] arr; // Deallocate array memory
+    delete[] arr; // Deallocate array memory by default
 }
 
 int main() {
-    heapExample();
+    heapExample();//need to handle without smart pointers
     return 0;
 }
