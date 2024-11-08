@@ -11,6 +11,7 @@ private:
     std::unique_ptr<pimpl> pimpl_;
 };
 // You can toggle these booleans to enable only some checks
+
 // This can be useful if some of them do not compile
 constexpr bool check_001_enabled = true;
 constexpr bool check_002_enabled = false;
@@ -183,6 +184,8 @@ int main(){
     std::cout << check << " - " << (success ? "OK" : "KO") << std::endl;
     return 0;
 }
+
+
 // Updated solution:
 
 
