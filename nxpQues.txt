@@ -86,26 +86,3 @@ He also shared his experiences in the company.
 He asked how many interviews I had given and why I hadn't been placed yet. He also inquired why I was focusing on software companies instead of core companies.
 He went through my entire resume, asking about each detail, like what Leetcode, GFG, Atcoder, Codeforces (CF), and CodeChef (CC) are.
 Finally, he said "see you in the office" [Accepted]. There was no HR round. This was the easiest interview I’ve given so far.
-
-
-Key: Be confident even if you don’t know the answer. But don’t waste the interviewer’s time.
-Bloopers: Every time I prepared extensively for an interview, I faced rejection from top-tier software companies. This time, I left it to fate, and it worked out. I was confident because I had another interview lined up in two days, so even if this went poorly, I had a backup. That mindset helped.
-
-
-Luck Factor: There were four interviewers. I was fortunate (it’s all part of God's plan) that I got an interviewer who focused on my resume. The others were asking questions about Python (ML), deep core subjects, and OS & Linux.
-
-
-Compensation details: https://leetcode.com/discuss/compensation/5905812/NXP-Semiconductors-or-Intern-%2B-Full-Time(-PBC)-or-Bengaluru-(India)-or-sept-2024-Offer
-
-
-Philosophy:
-There will be times when you’ve solved all the questions in online assessments but still don’t get shortlisted, or when you’ve given the best interview of your life yet didn’t make it to the next round. After a while, you might start comparing yourself to people who got placed after just 1-2 days of preparation and landed a great job(company) or package. You’ll also meet people who are far more qualified but still haven't been placed. Both situations exist.
-
-
-On the day of your placement, you’ll be happy, but soon after, life returns to the same routine. Before placement, you’ll wonder, ‘When will it happen?’ and afterward, you might see a great company hiring others and think, ‘I wish I were in that company.’ I’ve experienced this personally.
-
-
-This is a process that everyone goes through, and the key is to stay consistent in your preparation.
-
-
-The truth is, for each of us, there’s a day when everything finally clicks, and we get placed. Sometimes that day comes early, sometimes it takes longer. Life is a marathon, and we have miles to go.
