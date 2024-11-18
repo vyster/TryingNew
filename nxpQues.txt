@@ -1,13 +1,6 @@
 Online Assignment:
 Profile: Embedded
 Number of Questions: 35
-Type: All MCQs (C & OS output-based with a specific focus on pointer arithmetic)( +3,-1)
-Time: 1 hour
-Note: The questions were based on the chosen profile (Digital, Analog, or Embedded).
-Mode: In Campus Labs
-Interview R1 (Type: Elimination) (Approx 1 hr)
-Note: My resume was filled with software-related experience & project (SDE) (not for Embedded).
-
 
 The interview started with an introduction followed by a discussion about my resume. I explained all my projects briefly. The interviewer was particularly interested in one of my projects that involved graph algorithms like BFS, DFS, IDDFS, A*, and IDA*. He asked me to explain each algorithm one by one and write pseudocode for them. Since the project involved low-level design, he also asked why I used abstract classes, focusing on basic OOP concepts and how they were helpful in the project. (Approx 25 min)
 C Language Questions:
