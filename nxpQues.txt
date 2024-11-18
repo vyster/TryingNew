@@ -78,11 +78,3 @@ given time domain graph of some continues single, draw its frequency domain grap
 Z-transform and S-transform (gave a basic understanding only).
 Poles and zeros (related to control systems).
 FFT and DFT (explained what they do but couldn’t write the formula). He mentioned that he didn’t remember the formula either.
-Role Discussion & Final call (off-topic discussion):
-He explained the technology I will be working on at the company.
-He discussed what I needed to prepare (fundamentals, which I was taking some time to recall).
-We talked about when the work will start, etc.
-He also shared his experiences in the company.
-He asked how many interviews I had given and why I hadn't been placed yet. He also inquired why I was focusing on software companies instead of core companies.
-He went through my entire resume, asking about each detail, like what Leetcode, GFG, Atcoder, Codeforces (CF), and CodeChef (CC) are.
-Finally, he said "see you in the office" [Accepted]. There was no HR round. This was the easiest interview I’ve given so far.
