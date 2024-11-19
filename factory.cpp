@@ -39,13 +39,15 @@ public:
 };
 
 int main(int argc, char* argv[]) {
+
   std::cout << "Factory Design Pattern" << std::endl;
 
   AppleCompany *factory = new AppleFactory;
+
   Product *productA = factory->createiPad();//
   productA->checkProduct();
 
-
   Product *productB = factory->createMacbook();
   productB->checkProduct();
+
 }
