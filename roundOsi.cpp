@@ -5,7 +5,6 @@ char f1[4] = { 'p', 'e', 'a', 'r' };
 char f2[4] = { 'p', 'a', 'i', 'r' };
 char f3[4] = { 'd', 'a', 'r', 'r' };
 char f4[4] = { 'c', 'a', 'r', 'e' };
-
 std::vector<int*> vec;
 
 void print(char** f, size_t fLen, size_t ffLen, size_t val1, size_t val2)
@@ -13,9 +12,7 @@ void print(char** f, size_t fLen, size_t ffLen, size_t val1, size_t val2)
     for (size_t ii = 0; 
         (ii + val1) < fLen && (ii + val2) < ffLen && (ii < 2); 
         ii++)
-    {
         std::cout << f[val1 + ii][val2 + ii];
-    }
     std::cout << '\n';
 }
 
