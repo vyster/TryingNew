@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-class Product {
+class Product1 {
 public:
   Product() { std::cout << "Apple Product Interface being Called" << std::endl; }
   virtual ~Product() {}
