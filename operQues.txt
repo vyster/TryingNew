@@ -1,0 +1,179 @@
+Multithreading with Coding Preparation Guide
+Core Topics:
+Thread Lifecycle
+
+Creation: Using std::thread in C++.
+cpp
+Copy code
+#include <iostream>
+#include <thread>
+
+void printMessage() {
+    std::cout << "Hello from thread!" << std::endl;
+}
+
+int main() {
+    std::thread t(printMessage);
+    t.join(); // Wait for the thread to finish
+    return 0;
+}
+Execution: Threads run independently. Use join or detach as needed.
+Termination: Ensure threads complete before the program exits. Avoid dangling threads.
+Thread Synchronization
+
+Mutex: Prevent data races by locking shared resources.
+cpp
+Copy code
+#include <iostream>
+#include <thread>
+#include <mutex>
+
+std::mutex mtx;
+
+void printSafe(int id) {
+    std::lock_guard<std::mutex> lock(mtx);
+    std::cout << "Thread " << id << " is running safely." << std::endl;
+}
+
+int main() {
+    std::thread t1(printSafe, 1);
+    std::thread t2(printSafe, 2);
+    t1.join();
+    t2.join();
+    return 0;
+}
+Semaphore/Condition Variables: Coordinate between threads.
+cpp
+Copy code
+#include <iostream>
+#include <thread>
+#include <condition_variable>
+
+std::condition_variable cv;
+std::mutex mtx;
+bool ready = false;
+
+void workerThread() {
+    std::unique_lock<std::mutex> lock(mtx);
+    cv.wait(lock, [] { return ready; });
+    std::cout << "Worker thread activated!" << std::endl;
+}
+
+int main() {
+    std::thread worker(workerThread);
+
+    {
+        std::lock_guard<std::mutex> lock(mtx);
+        ready = true;
+    }
+    cv.notify_one(); // Signal worker thread
+    worker.join();
+    return 0;
+}
+Deadlocks and Race Conditions
+
+Identification: Look for circular waits or unprotected shared resources.
+Prevention:
+Use a consistent locking order.
+Avoid holding locks for extended periods.
+Use lock-free data structures where possible.
+Thread-safe Data Structures
+
+Use STL alternatives like std::queue guarded by std::mutex.
+Atomic variables (std::atomic) for simple operations.
+Concurrency Patterns
+
+Producer-Consumer:
+cpp
+Copy code
+#include <iostream>
+#include <queue>
+#include <thread>
+#include <condition_variable>
+
+std::queue<int> q;
+std::mutex mtx;
+std::condition_variable cv;
+
+void producer() {
+    for (int i = 0; i < 10; ++i) {
+        std::unique_lock<std::mutex> lock(mtx);
+        q.push(i);
+        std::cout << "Produced: " << i << std::endl;
+        cv.notify_one();
+    }
+}
+
+void consumer() {
+    for (int i = 0; i < 10; ++i) {
+        std::unique_lock<std::mutex> lock(mtx);
+        cv.wait(lock, [] { return !q.empty(); });
+        int val = q.front();
+        q.pop();
+        std::cout << "Consumed: " << val << std::endl;
+    }
+}
+
+int main() {
+    std::thread t1(producer);
+    std::thread t2(consumer);
+    t1.join();
+    t2.join();
+    return 0;
+}
+Readers-Writers: Manage multiple readers or writers without conflicts.
+Practice Coding Problems
+Thread-Safe Queue
+
+Use std::mutex and std::condition_variable to ensure thread safety.
+Ensure push and pop methods are atomic.
+Dining Philosophers Problem
+
+Use mutexes to represent forks.
+Implement a solution to avoid deadlocks (e.g., resource hierarchy).
+Multithreaded Matrix Multiplication
+
+Split rows among threads to compute partial results concurrently.
+cpp
+Copy code
+#include <iostream>
+#include <thread>
+#include <vector>
+
+void multiplyRow(const std::vector<std::vector<int>>& matA,
+                 const std::vector<std::vector<int>>& matB,
+                 std::vector<std::vector<int>>& result,
+                 int row) {
+    for (size_t j = 0; j < matB[0].size(); ++j) {
+        result[row][j] = 0;
+        for (size_t k = 0; k < matA[0].size(); ++k) {
+            result[row][j] += matA[row][k] * matB[k][j];
+        }
+    }
+}
+
+int main() {
+    std::vector<std::vector<int>> matA = {{1, 2}, {3, 4}};
+    std::vector<std::vector<int>> matB = {{5, 6}, {7, 8}};
+    std::vector<std::vector<int>> result(2, std::vector<int>(2, 0));
+
+    std::thread t1(multiplyRow, std::cref(matA), std::cref(matB), std::ref(result), 0);
+    std::thread t2(multiplyRow, std::cref(matA), std::cref(matB), std::ref(result), 1);
+
+    t1.join();
+    t2.join();
+
+    for (const auto& row : result) {
+        for (int val : row) {
+            std::cout << val << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
+Quick Tips
+Familiarize with Standard Libraries: std::thread, std::mutex, std::condition_variable.
+Clean Code: Use meaningful variable names and comments to explain critical sections.
+Debugging: Use tools like gdb or valgrind to identify synchronization issues.
+Let me know if you need additional practice problems or explanations!
