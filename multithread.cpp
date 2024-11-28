@@ -434,6 +434,7 @@ Resuming the work after notification
 using namespace std;
 
 ///;[3, 45, 6, 9, 1, 78, 98, 45, 6, 16]
+
 ///[45, 78, 9, 78, 78, 98, -1, -1, 16, -1]
 vector<int> fSol(vector<int> input)
 {
