@@ -342,7 +342,6 @@ if (cin)                    // Good state (not EOF)?
 istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
 ostream& operator<<(ostream& o, const T& x) {return o << ...;}
 
-
 // ## `string` (Variable sized character array)
 
 #include <string>         // Include string (std namespace)
