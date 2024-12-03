@@ -343,7 +343,6 @@ istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
 ostream& operator<<(ostream& o, const T& x) {return o << ...;}
 
 // ## `string` (Variable sized character array)
-
 #include <string>         // Include string (std namespace)
 string s1, s2="hello";    // Create strings
 s1.size(), s2.size();     // Number of characters: 0, 5
